@@ -1,0 +1,94 @@
+.agis-compare-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 1.25rem 0 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--muted);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  touch-action: none; /* dragging the handle shouldn't also scroll the page */
+}
+
+.agis-compare-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: ew-resize;
+}
+
+.agis-compare-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+.agis-compare-after-clip {
+  position: absolute;
+  inset: 0;
+}
+
+.agis-compare-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--card);
+  transform: translateX(-50%);
+  cursor: ew-resize;
+}
+.agis-compare-handle:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.agis-compare-knob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+  backdrop-filter: blur(6px);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+}
+.agis-compare-knob svg {
+  width: 16px;
+  height: 16px;
+}
+
+.agis-compare-label {
+  position: absolute;
+  bottom: 0.6rem;
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+  backdrop-filter: blur(6px);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.15rem 0.5rem;
+  font-size: 0.72rem;
+  pointer-events: none;
+}
+/* the after-image layer is clip-path'd to its left pct%, so the before
+   image (the unclipped base layer) shows through on the right — labels
+   sit on the side that actually shows that image, not the attribute name */
+.agis-compare-label-before {
+  right: 0.6rem;
+}
+.agis-compare-label-after {
+  left: 0.6rem;
+}

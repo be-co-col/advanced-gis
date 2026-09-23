@@ -1,0 +1,56 @@
+/* Suitability report stat-card grid — sits in normal page flow (not floating
+   over a map), so a flat card rather than the frosted-glass .agis-ctl
+   treatment used for map controls. Reuses the site's existing card language
+   (border + var(--card)/var(--secondary) + var(--radius-lg)). */
+
+.agis-report {
+  margin: 1.25rem 0 1.75rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--card);
+  color: var(--card-foreground);
+}
+
+.agis-report-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.agis-report-loading,
+.agis-report-error {
+  color: var(--muted-foreground);
+  font-size: 0.85rem;
+}
+
+.agis-report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.agis-report-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--secondary);
+}
+
+.agis-report-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--secondary-foreground);
+}
+
+.agis-report-label {
+  font-size: 0.78rem;
+  color: var(--muted-foreground);
+}
+
+.agis-report-stat-negative .agis-report-value {
+  color: var(--destructive);
+}

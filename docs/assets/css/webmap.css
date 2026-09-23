@@ -1,0 +1,300 @@
+.agis-map-wrap {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  margin: 1.25rem 0 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--muted);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+.agis-map-wrap:fullscreen,
+.agis-map-wrap:-webkit-full-screen {
+  height: 100vh;
+  border-radius: 0;
+  border: none;
+  margin: 0;
+}
+
+.agis-map {
+  width: 100%;
+  height: 100%;
+  background: var(--muted);
+  font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+}
+
+.agis-map .leaflet-control-attribution {
+  background: color-mix(in oklab, var(--card) 85%, transparent);
+  backdrop-filter: blur(6px);
+  color: var(--muted-foreground);
+  border-radius: var(--radius-sm) 0 0 0;
+}
+.agis-map .leaflet-control-attribution a {
+  color: var(--muted-foreground);
+}
+
+/* adaptive scale bar */
+.agis-map .leaflet-control-scale {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+.agis-map .leaflet-control-scale-line {
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+  backdrop-filter: blur(6px);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: var(--radius-sm);
+  padding: 0 6px 1px;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  text-shadow: none;
+}
+
+/* --- shared "chrome" for custom Leaflet controls --- */
+.agis-ctl {
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+  backdrop-filter: blur(6px);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  overflow: hidden; /* clip children (buttons) to the rounded corners */
+}
+
+.agis-map .agis-btn {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  color: var(--card-foreground);
+  cursor: pointer;
+  user-select: none;
+  line-height: 0;
+}
+.agis-map .agis-btn:hover {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+}
+.agis-map .agis-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.agis-map .leaflet-bar.agis-ctl {
+  box-sizing: border-box;
+  width: 32px;
+}
+
+/* zoom control (Leaflet built-in) — same frosted-glass "chrome" as the
+   custom controls above, instead of leaflet.css's default white box. */
+.agis-map .leaflet-control-zoom {
+  box-sizing: border-box;
+  width: 32px; /* matches .agis-ctl's fullscreen button (30px content + 1px border each side) */
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+.agis-map .leaflet-control-zoom-in,
+.agis-map .leaflet-control-zoom-out {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background: transparent;
+  color: var(--card-foreground);
+  border: none;
+  font-size: 18px;
+}
+.agis-map .leaflet-control-zoom-in {
+  border-bottom: 1px solid var(--border);
+}
+.agis-map .leaflet-control-zoom-in:hover,
+.agis-map .leaflet-control-zoom-out:hover {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+}
+.agis-map .leaflet-control-zoom a.leaflet-disabled {
+  color: var(--muted-foreground);
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* settings / symbology panel */
+.agis-panel {
+  padding: 0.65rem 0.75rem;
+  font-size: 0.78rem;
+  line-height: 1.3;
+  width: 190px;
+}
+.agis-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.agis-panel-header .agis-chev {
+  transition: transform 0.15s ease;
+  color: var(--muted-foreground);
+}
+.agis-panel.is-collapsed .agis-panel-body {
+  display: none;
+}
+.agis-panel.is-collapsed .agis-chev {
+  transform: rotate(-90deg);
+}
+.agis-panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 0.6rem;
+}
+.agis-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.agis-field label {
+  color: var(--muted-foreground);
+  font-size: 0.72rem;
+}
+.agis-row {
+  display: flex;
+  gap: 0.4rem;
+}
+.agis-row .agis-field {
+  flex: 1;
+  min-width: 0;
+}
+
+.agis-panel select,
+.agis-panel input[type="number"] {
+  width: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  border: 1px solid var(--input, var(--border));
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.35rem;
+  font-size: 0.75rem;
+  font-family: inherit;
+}
+.agis-panel select:focus,
+.agis-panel input:focus {
+  outline: 2px solid var(--ring);
+  outline-offset: 1px;
+}
+
+.agis-panel input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+/* per-vector layer toggles */
+.agis-layers {
+  gap: 0.35rem;
+}
+.agis-layer-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--foreground);
+  cursor: pointer;
+}
+.agis-layer-toggle input[type="checkbox"] {
+  margin: 0;
+  accent-color: var(--primary);
+}
+.agis-layer-toggle i {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.agis-reset {
+  align-self: flex-start;
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+.agis-reset:hover {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+/* legend */
+.agis-legend {
+  padding: 0.5rem 0.65rem 0.7rem;
+  font-size: 0.72rem;
+  width: 230px;
+}
+.agis-legend-title {
+  color: var(--muted-foreground);
+  margin-bottom: 0.3rem;
+}
+.agis-legend-bar {
+  height: 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+.agis-legend-ticks {
+  position: relative;
+  height: 1.1em;
+  margin-top: 0.3rem;
+  color: var(--foreground);
+  font-variant-numeric: tabular-nums;
+}
+.agis-legend-tick {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.agis-legend-tick::before {
+  content: "";
+  position: absolute;
+  top: -0.45rem;
+  left: 50%;
+  width: 1px;
+  height: 4px;
+  background: var(--border);
+}
+
+/* categorical legend (e.g. flow direction classes) */
+.agis-legend-swatches {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.25rem 0.6rem;
+  color: var(--foreground);
+}
+.agis-legend-swatch {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.agis-legend-swatch i {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}

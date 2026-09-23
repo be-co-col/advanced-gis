@@ -1,0 +1,11 @@
+# Colour ramp for direct-beam solar irradiation, summed over the Apr-Oct
+# growing season (see solar_rgrass.R). Same ColorBrewer YlOrRd ramp as the
+# other radiation layers, spaced between this raster's 2nd and 98th
+# percentile rather than its true min/max — see radiation_global_colors.txt
+# for why. Values outside that band clip to the nearest end colour.
+898301.22  255 255 178
+1017095.54  254 204 92
+1135889.86  253 141 60
+1254684.17  240 59 32
+1373478.49  189 0 38
+nv 0 0 0 0

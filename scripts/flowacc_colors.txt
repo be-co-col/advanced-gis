@@ -1,0 +1,11 @@
+# Colour ramp for flow accumulation, consumed by `gdaldem color-relief`.
+# The input here is log10(accumulation + 1) (see build_raster_tiles.sh
+# with LOG_TRANSFORM=1) — raw flow accumulation spans several orders of
+# magnitude (1 to ~12.9M cells in this dataset), so a linear ramp on raw
+# values would show almost the entire landscape as a single colour with
+# only a few individual pixels standing out. Same endpoint colours as the
+# extracted streams (scripts/build_hydrology_vectors.py) for visual
+# consistency between the two maps.
+0.0   247 251 255
+7.2     8  48 107
+nv      0   0   0   0

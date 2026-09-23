@@ -1,0 +1,32 @@
+{
+  "label": "Combined model (DEM + hydro + solar)",
+  "script": "full_suitability.R",
+  "generated_at": "2026-09-22T17:56:49Z",
+  "cell_area_ha": 0.0625,
+  "total_cells": 31755606,
+  "suitable_cells": 1008841,
+  "suitable_ha": 63052.6,
+  "suitable_pct": 3.2,
+  "baseline_suitable_cells": 1223417,
+  "baseline_suitable_ha": 76463.6,
+  "removed_cells": 214576,
+  "removed_ha": 13411,
+  "removed_pct": 17.5,
+  "refinements": {
+    "hydro_only": {
+      "removed_cells": 195295,
+      "removed_ha": 12205.9,
+      "removed_pct": 16
+    },
+    "solar_only": {
+      "removed_cells": 10045,
+      "removed_ha": 627.8,
+      "removed_pct": 0.8
+    },
+    "both": {
+      "removed_cells": 9236,
+      "removed_ha": 577.2,
+      "removed_pct": 0.8
+    }
+  }
+}

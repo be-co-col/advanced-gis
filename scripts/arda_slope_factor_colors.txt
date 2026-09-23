@@ -1,0 +1,21 @@
+# Categorical colour ramp for the Arda LCP page's slope_factor.tif, consumed
+# by `gdaldem color-relief -exact_color_entry` (see build_raster_tiles.sh with
+# EXACT_COLOR=1 RESAMPLING=near). Each of the 6 reclass classes (see
+# 01_preprocessing.R's `rcl` matrix / AdvGIS_10.pdf slide 19) gets its own
+# distinct colour on a sequential ramp (ColorBrewer YlOrRd) rather than being
+# interpolated between neighbours, which would be meaningless for step-function
+# categories. Values are the exact float32 representations the raster actually
+# stores (confirmed via GDAL — 1.2 and 1.8 aren't bit-exact in float32), so
+# -exact_color_entry's literal match succeeds for every class.
+#
+# Classes, in order: flat, little inclined, starting to get exhausting,
+# steep, very steep, nearly impossible to climb.
+#
+# Format: <factor value> <R> <G> <B> <A>
+1.0                  255 255 178 255
+1.2000000476837158   254 217 118 255
+1.7999999523162842   254 178  76 255
+3.0                  253 141  60 255
+6.0                  240  59  32 255
+12.0                 189   0  38 255
+nv                     0   0   0   0

@@ -1,0 +1,11 @@
+# Near-identity greyscale pass-through for the Arda hillshade.jpg (an already
+# pre-rendered greyscale image — nothing to actually colour, this just exists
+# so build_raster_tiles.sh's gdaldem color-relief step can be reused unchanged
+# instead of writing a bespoke tiling command). Two points define an exact
+# linear map (output == input over 1-252, the raster's real value range),
+# consumed by `gdaldem color-relief` (see scripts/build_raster_tiles.sh).
+#
+# Format: <pixel value> <R> <G> <B> <A>
+1    1   1   1   255
+252  252 252 252 255
+nv   0   0   0   0

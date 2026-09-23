@@ -1,0 +1,22 @@
+[project]
+name = "advanced-gis"
+version = "0.1.0"
+description = "Webpage documenting what has been done in the course Advanced Methods in GIS and Applications"
+readme = "README.md"
+authors = [
+    { name = "Benedikt Jochim", email = "s6bejoch@uni-trier.de" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "mkdocs>=1.6.1",
+    "mkdocs-bibtex>=4.4.0",
+    "mkdocs-shadcn>=0.12.0",
+    "pygments>=2.21.0",
+    "pymdown-extensions>=11.0.1",
+]

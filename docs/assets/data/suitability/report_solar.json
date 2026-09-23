@@ -1,0 +1,15 @@
+{
+  "label": "Solar refinement",
+  "script": "solar_suitability.R",
+  "generated_at": "2026-09-22T17:56:30Z",
+  "cell_area_ha": 0.0625,
+  "total_cells": 31755606,
+  "suitable_cells": 1204136,
+  "suitable_ha": 75258.5,
+  "suitable_pct": 3.8,
+  "baseline_suitable_cells": 1223417,
+  "baseline_suitable_ha": 76463.6,
+  "removed_cells": 19281,
+  "removed_ha": 1205.1,
+  "removed_pct": 1.6
+}

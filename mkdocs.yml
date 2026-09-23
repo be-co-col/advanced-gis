@@ -1,0 +1,65 @@
+site_name: AdvancedGIS Portfolio
+
+plugins:
+  - search
+  - bibtex:
+      bib_file: docs/references.bib
+
+theme:
+  name: shadcn
+  custom_dir: theme_overrides
+  favicon: assets/img/lucide--land-plot.png
+  icon: assets/img/lucide--land-plot.png
+  pygments_style:
+    light: shadcn-light
+    dark: github-dark
+  # mkdocs-shadcn auto-injects KaTeX + auto-render when pymdownx.arithmatex
+  # is enabled below, keyed off this option (see
+  # shadcn/plugins/mixins/katex.py) — its installed version crashes in
+  # on_config if this is left at its own schema default of `null` (calls
+  # `.get("trust", ...)` on it directly), so it has to be set to at least
+  # an empty mapping here.
+  katex_options: {}
+
+markdown_extensions:
+  - footnotes # mkdocs-bibtex renders [@key] citations as [^key] footnotes under the hood
+  - shadcn.extensions.iconify
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed
+  - codehilite
+  - pymdownx.highlight:
+      css_class: codehilite
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path:
+        - docs/assets/code-snippets
+      check_paths: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css
+  - assets/css/theme-gruvbox.css
+  - assets/css/webmap.css
+  - assets/css/compare-slider.css
+  - assets/css/code-snippets.css
+  - assets/css/report.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js
+  - https://cdn.jsdelivr.net/npm/geotiff@2.1.3/dist-browser/geotiff.min.js
+  - assets/js/webmap.js
+  - assets/js/compare-slider.js
+  - assets/js/report.js
+
+nav:
+  - Welcome: index.md
+  - Introduction: introduction.md
+  - Processing:
+      - DEM: dem.md
+      - Hydrology: hydrology.md
+      - Solar Radiation: radiation.md
+  - Suitability-modeling: suitability-model.md
+  - Bonus: lcp.md

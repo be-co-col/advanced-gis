@@ -1,0 +1,15 @@
+# Colour ramp for the DEM tile pyramid, consumed by `gdaldem color-relief`
+# (see scripts/build_dem_tiles.sh). Edit the stops below and re-run the
+# build script to change how the DEM is coloured on the site — this is the
+# single source of truth for the ramp; nothing on the client side re-colours
+# the tiles.
+#
+# Format: <elevation in metres> <R> <G> <B>
+20    26   77   46
+150   79  157   93
+300  169  200   90
+450  224  207  122
+600  185  137   90
+750  122   82   51
+820  255  255  255
+nv      0    0    0    0

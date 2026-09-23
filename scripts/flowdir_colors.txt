@@ -1,0 +1,16 @@
+# Categorical colour ramp for D8 flow direction, consumed by
+# `gdaldem color-relief -exact_color_entry` (see build_raster_tiles.sh with
+# EXACT_COLOR=1) — each of the 8 direction codes plus "flat" gets its own
+# distinct colour rather than being interpolated between neighbours (that
+# would be meaningless for a categorical value). Standard D8 encoding
+# (clockwise from East): 1=E 2=SE 4=S 8=SW 16=W 32=NW 64=N 128=NE.
+0    153 153 153
+1    228  26  28
+2    255 127   0
+4    255 255  51
+8     77 175  74
+16    55 126 184
+32   152  78 163
+64   247 129 191
+128  166  86  40
+nv     0   0   0   0

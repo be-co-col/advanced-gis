@@ -1,0 +1,11 @@
+# Colour ramp for diffuse (sky-scattered) solar irradiation, summed over
+# the Apr-Oct growing season (see solar_rgrass.R). Same ColorBrewer YlOrRd
+# ramp as the other radiation layers, spaced between this raster's 2nd and
+# 98th percentile rather than its true min/max — see
+# radiation_global_colors.txt for why.
+208492.34  255 255 178
+221202.91  254 204 92
+233913.48  253 141 60
+246624.05  240 59 32
+259334.63  189 0 38
+nv 0 0 0 0

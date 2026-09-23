@@ -1,0 +1,15 @@
+# Colour ramp for global solar irradiation (direct + diffuse, summed over
+# the Apr-Oct growing season — see solar_rgrass.R), consumed by
+# `gdaldem color-relief`. ColorBrewer YlOrRd, 5 stops linearly spaced
+# between this raster's 2nd and 98th percentile (NOT its true min/max) —
+# the raw range is dominated by a handful of extreme outlier cells, so a
+# ramp spanning the actual min/max left almost the entire landscape reading
+# as a single colour. Values outside the 2nd-98th band just clip to the
+# nearest end colour, which is the standard way to handle this kind of
+# skew: gdaldem does this automatically for values past the listed stops.
+1119569.34  255 255 178
+1250246.01  254 204 92
+1380922.67  253 141 60
+1511599.34  240 59 32
+1642276.00  189 0 38
+nv 0 0 0 0

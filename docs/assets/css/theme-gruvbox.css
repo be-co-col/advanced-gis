@@ -1,0 +1,225 @@
+/* Gruvbox Material (soft contrast) site-wide palette.
+   Overrides the shadcn theme's design tokens (:root = light, .dark = dark)
+   and the pygments syntax-highlighting classes, so both the page chrome and
+   code blocks follow the same colour scheme. Hex values are the "material"
+   foreground / soft-contrast background variant of sainnhe/gruvbox-material. */
+
+:root {
+  /* -- gruvbox-material soft, light -- */
+  --background: #f2e5bc;
+  --foreground: #4f3829;
+  --card: #eddeb5;
+  --card-foreground: #4f3829;
+  --popover: #ebdbb2;
+  --popover-foreground: #4f3829;
+  --primary: #c35e0a;
+  --primary-foreground: #f2e5bc;
+  --secondary: #e6d5ae;
+  --secondary-foreground: #4f3829;
+  --muted: #ebdbb2;
+  --muted-foreground: #7c6f64;
+  --accent: #e6d5ae;
+  --accent-foreground: #4f3829;
+  --destructive: #c14a4a;
+  --border: #e6d5ae;
+  --input: #e6d5ae;
+  --ring: #c35e0a;
+  --chart-1: #45707a;
+  --chart-2: #4c7a5d;
+  --chart-3: #6c782e;
+  --chart-4: #b47109;
+  --chart-5: #945e80;
+  --sidebar: #eddeb5;
+  --sidebar-foreground: #4f3829;
+  --sidebar-primary: #c35e0a;
+  --sidebar-primary-foreground: #f2e5bc;
+  --sidebar-accent: #e6d5ae;
+  --sidebar-accent-foreground: #4f3829;
+  --sidebar-border: #e6d5ae;
+  --sidebar-ring: #c35e0a;
+  --surface: #eddeb5;
+  --surface-foreground: #4f3829;
+  --code-highlight: #ebdbb2;
+  --code-number: #a89984;
+  --selection: #4f3829;
+  --selection-foreground: #f2e5bc;
+  --warning: #b47109;
+  --warning-foreground: #f2e5bc;
+
+  /* pygments token roles */
+  --syntax-comment: #928374;
+  --syntax-keyword: #c14a4a;
+  --syntax-string: #6c782e;
+  --syntax-number: #945e80;
+  --syntax-builtin: #c35e0a;
+  --syntax-function: #4c7a5d;
+  --syntax-variable: #45707a;
+  --syntax-attribute: #b47109;
+}
+
+.dark {
+  /* -- gruvbox-material soft, dark -- */
+  --background: #32302f;
+  --foreground: #ddc7a1;
+  --card: #3c3836;
+  --card-foreground: #ddc7a1;
+  --popover: #3c3836;
+  --popover-foreground: #ddc7a1;
+  --primary: #e78a4e;
+  --primary-foreground: #32302f;
+  --secondary: #504945;
+  --secondary-foreground: #ddc7a1;
+  --muted: #3c3836;
+  --muted-foreground: #a89984;
+  --accent: #504945;
+  --accent-foreground: #ddc7a1;
+  --destructive: #ea6962;
+  --border: #504945;
+  --input: #504945;
+  --ring: #e78a4e;
+  --chart-1: #7daea3;
+  --chart-2: #89b482;
+  --chart-3: #a9b665;
+  --chart-4: #d8a657;
+  --chart-5: #d3869b;
+  --sidebar: #3c3836;
+  --sidebar-foreground: #ddc7a1;
+  --sidebar-primary: #e78a4e;
+  --sidebar-primary-foreground: #32302f;
+  --sidebar-accent: #504945;
+  --sidebar-accent-foreground: #ddc7a1;
+  --sidebar-border: #504945;
+  --sidebar-ring: #e78a4e;
+  --surface: #3c3836;
+  --surface-foreground: #ddc7a1;
+  --code-highlight: #45403d;
+  --code-number: #7c6f64;
+  --selection: #ddc7a1;
+  --selection-foreground: #32302f;
+  --warning: #d8a657;
+  --warning-foreground: #32302f;
+
+  /* pygments token roles */
+  --syntax-comment: #928374;
+  --syntax-keyword: #ea6962;
+  --syntax-string: #a9b665;
+  --syntax-number: #d3869b;
+  --syntax-builtin: #e78a4e;
+  --syntax-function: #89b482;
+  --syntax-variable: #7daea3;
+  --syntax-attribute: #d8a657;
+}
+
+/* -- pygments classes, mapped onto the syntax-* roles above so the same
+   rules apply in both modes -- */
+.codehilite {
+  background: var(--code);
+  color: var(--code-foreground);
+}
+.codehilite .hll {
+  background-color: var(--code-highlight);
+}
+.codehilite .linenos,
+.codehilite .linenos .special,
+span.linenos.special {
+  color: var(--code-number);
+  background-color: transparent;
+}
+
+.codehilite .c,
+.codehilite .ch,
+.codehilite .cm,
+.codehilite .cp,
+.codehilite .cpf,
+.codehilite .c1,
+.codehilite .cs {
+  color: var(--syntax-comment);
+  font-style: italic;
+}
+
+.codehilite .k,
+.codehilite .kc,
+.codehilite .kd,
+.codehilite .kn,
+.codehilite .kp,
+.codehilite .kr,
+.codehilite .kt,
+.codehilite .ow,
+.codehilite .nd,
+.codehilite .ne,
+.codehilite .gt,
+.codehilite .gr {
+  color: var(--syntax-keyword);
+}
+
+.codehilite .s,
+.codehilite .sa,
+.codehilite .sb,
+.codehilite .sc,
+.codehilite .dl,
+.codehilite .sd,
+.codehilite .s2,
+.codehilite .sh,
+.codehilite .si,
+.codehilite .sx,
+.codehilite .sr,
+.codehilite .s1,
+.codehilite .ss {
+  color: var(--syntax-string);
+}
+.codehilite .gi {
+  color: var(--syntax-string);
+  background-color: transparent;
+}
+
+.codehilite .m,
+.codehilite .mb,
+.codehilite .mf,
+.codehilite .mh,
+.codehilite .mi,
+.codehilite .mo,
+.codehilite .il,
+.codehilite .no {
+  color: var(--syntax-number);
+}
+
+.codehilite .nb,
+.codehilite .bp,
+.codehilite .se {
+  color: var(--syntax-builtin);
+}
+
+.codehilite .nc,
+.codehilite .nf,
+.codehilite .nn,
+.codehilite .nt,
+.codehilite .fm {
+  color: var(--syntax-function);
+}
+
+.codehilite .nv,
+.codehilite .vc,
+.codehilite .vg,
+.codehilite .vi,
+.codehilite .vm {
+  color: var(--syntax-variable);
+}
+
+.codehilite .na {
+  color: var(--syntax-attribute);
+}
+
+.codehilite .err,
+.codehilite .gd {
+  color: var(--code-foreground);
+  background-color: var(--syntax-keyword);
+}
+
+.codehilite .gh,
+.codehilite .gu {
+  color: var(--code-foreground);
+  font-weight: bold;
+}
+.codehilite .gp {
+  color: var(--syntax-comment);
+}

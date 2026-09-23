@@ -1,0 +1,32 @@
+{
+  "label": "DEM-only baseline",
+  "script": "suitability_analysis.R",
+  "generated_at": "2026-09-22T17:08:54Z",
+  "cell_area_ha": 0.0625,
+  "total_cells": 31730898,
+  "suitable_cells": 1223417,
+  "suitable_ha": 76463.6,
+  "suitable_pct": 3.9,
+  "criteria": {
+    "elevation": {
+      "cells": 10530980,
+      "ha": 658186.2,
+      "pct_of_total": 33.2
+    },
+    "slope": {
+      "cells": 14760942,
+      "ha": 922558.9,
+      "pct_of_total": 46.5
+    },
+    "aspect": {
+      "cells": 12186732,
+      "ha": 761670.8,
+      "pct_of_total": 38.4
+    },
+    "combined_and": {
+      "cells": 1223417,
+      "ha": 76463.6,
+      "pct_of_total": 3.9
+    }
+  }
+}
