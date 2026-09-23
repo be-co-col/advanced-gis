@@ -15,7 +15,7 @@ GRASS GIS) and rendered as an interactive mkdocs site with Leaflet web maps.
 
 ## Access via Browser
 
-`https://be-co-col.github.io/advanced-gis/`
+[AdvGIS-Portfolio](https://be-co-col.github.io/advanced-gis/)
 
 ## Running locally
 
