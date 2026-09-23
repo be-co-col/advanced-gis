@@ -13,6 +13,10 @@ GRASS GIS) and rendered as an interactive mkdocs site with Leaflet web maps.
 - **Suitability Modeling** — combining the above into a vineyard-suitability index
 - **Bonus: Least-Cost Path** — a cost-distance routing exercise
 
+## Access via Browser
+
+`https://be-co-col.github.io/advanced-gis/`
+
 ## Running locally
 
 ```bash
