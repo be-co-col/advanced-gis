@@ -32,7 +32,7 @@ if [[ $# -lt 3 || $# -gt 4 ]]; then
     exit 1
 fi
 
-SHAPEFILE="$1"
+VECTOR="$1"
 INPUT_RASTER="$2"
 OUTPUT_RASTER="$3"
 USER_NODATA="${4:-}"
@@ -53,7 +53,7 @@ else
 fi
 
 WARP_ARGS=(-cutline
-           "$SHAPEFILE"
+           "$VECTOR"
            -crop_to_cutline
            -dstalpha
            -dstnodata
