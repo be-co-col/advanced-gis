@@ -39,6 +39,10 @@ external_links:
     1415876</span>
 </div>
 
+!!! note "Declaration: "
+    The declaration of academic integrity can be accessed by the examiner via
+    [Seafile](https://seafile.rlp.net/f/d1fea03010d841a081cb/).
+
 ## Explore the workflow
 
 <div class="workflow-grid" markdown="1">
