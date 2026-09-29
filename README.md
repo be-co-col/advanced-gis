@@ -7,11 +7,11 @@ GRASS GIS) and rendered as an interactive mkdocs site with Leaflet web maps.
 
 ## Contents
 
-- **DEM** — terrain preparation and derivatives
-- **Hydrology** — flow accumulation, streams, watershed delineation
-- **Solar Radiation** — incoming radiation modeling across the terrain
-- **Suitability Modeling** — combining the above into a vineyard-suitability index
-- **Bonus: Least-Cost Path** — a cost-distance routing exercise
+- **DEM** - terrain preparation and derivatives
+- **Hydrology** - flow accumulation, streams, watershed delineation
+- **Solar Radiation** -incoming radiation modeling across the terrain
+- **Suitability Modeling** - combining the above into a vineyard-suitability index
+- **Bonus: Least-Cost Path** - a cost-distance routing exercise
 
 ## Access via Browser
 
@@ -29,3 +29,8 @@ uv run mkdocs serve
 mkdocs + [mkdocs-shadcn](https://github.com/asiffer/mkdocs-shadcn), GDAL/R/GRASS
 for geoprocessing (run outside this repo — see each page's "Scripts" section
 for the exact code), Leaflet for the interactive maps.
+
+## AI usage
+
+AI ([Claude Sonnet](https://www.anthropic.com/claude/sonnet)) has been used to aid in generating parts of the code and for language improvement.
+
