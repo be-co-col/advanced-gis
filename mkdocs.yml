@@ -1,4 +1,5 @@
 site_name: AdvancedGIS Portfolio
+repo_url: https://github.com/be-co-col/advanced-gis
 
 plugins:
   - search
@@ -8,6 +9,7 @@ plugins:
 theme:
   name: shadcn
   custom_dir: theme_overrides
+  show_stargazers: false
   favicon: assets/img/lucide--land-plot.png
   icon: assets/img/lucide--land-plot.png
   pygments_style:
